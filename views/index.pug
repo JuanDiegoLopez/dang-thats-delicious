@@ -1,0 +1,14 @@
+extends layout
+
+include mixins/_storeCard
+include mixins/_pagination
+
+block content
+  .inner
+    h1 #{title}
+    if stores.length === 0
+      h3 There are no stores to show
+    .stores 
+      each store in stores
+        +storeCard(store)
+    +pagination(page, totalPages, count)

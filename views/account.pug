@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  .inner
+    form.form(action='/account' method='POST')
+      h2 #{title} 
+      label(for='name') Name
+      input(type='text' id='name' name='name' value=user.name required)
+      label(for='email') Email Address
+      input(type='email' id='email' name='email' value=user.email required)
+      input.button(type='submit' value='Update My Account')
+
